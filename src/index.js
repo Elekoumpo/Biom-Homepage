@@ -1,17 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
+import './styles/main.css';
+import Navbar from './components/Navbar';
+import HeroSection1 from './components/HeroSection1';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const Home = () => {
+return(
+  <div className="pt-16">
+  <Navbar />
+  <HeroSection1 />
+  </div>
+
 );
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(
+  <React.StrictMode>
+    <Home /> 
+  </React.StrictMode>,
+  document.getElementById('root')
+);
