@@ -1,0 +1,8 @@
+.carousel .control-dots .dot {
+    @apply box-border border border-darker-green bg-quote-background opacity-100 h-3 w-3 m-1;
+  }
+  
+  .carousel .control-dots .dot.selected, 
+  .carousel .control-dots .dot:hover {
+    @apply bg-darker-green;
+  }
