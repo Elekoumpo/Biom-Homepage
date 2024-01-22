@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image1 from '../assets/AdobeStock_372350085_Preview.png';
 import Image2 from '../assets/Biom_wipe_6.png';
 import Image3 from '../assets/kitchen_counter_low res.png';
@@ -14,12 +14,24 @@ const CarouselItem = ({ image, altText, index }) => (
 );
 
 const Section8 = () => {
-  const images = [Image1, Image2, Image3, Image4, Image5];
+  const [shuffledImages, setShuffledImages] = useState([]);
+  
+  useEffect(() => {
+    let images = [Image1, Image2, Image3, Image4, Image5];
+    
+    for(let i = images.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [images[i], images[j]] = [images[j], images[i]];
+    }
+
+    setShuffledImages(images);
+  }, []);
+
   return (
     <div className="pt-10 pb-4 mb-14">
       <h1 className="text-center font-bold font-chronicle-display text-darker-green text-xl mb-10">#cleanwithbiom</h1>
       <Carousel showThumbs={false} infiniteLoop autoPlay showStatus={false} emulateTouch showArrows={false} centerMode showIndicators={false} centerSlidePercentage={20}>
-        {images.map((image, index) => <CarouselItem image={image} altText={`Image ${index + 1}`} key={`carousel-item-${index}`} index={index} />)}
+        {shuffledImages.map((image, index) => <CarouselItem image={image} altText={`Image ${index + 1}`} key={`carousel-item-${index}`} index={index} />)}
       </Carousel>
       <button className="block w-69 h-12 border-primary border-black border border-solid rounded-md text-primary font-bold text-base leading-7 tracking-wide uppercase mx-auto mt-8 flex justify-between items-center">
   <span className="text-darker-green font-brandon border-r m-2 text-sm border-black pr-2">

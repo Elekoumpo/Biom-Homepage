@@ -10,9 +10,9 @@ const Section4 = () => {
         <div className="w-72 h-20 flex flex-wrap content-center">
           <h2 className="text-4xl font-black font-chronicle-display">Ready to start<br/> wiping out waste?</h2>
         </div>
-        <button className="mt-4 p-4 w-full bg-white border text-dark-green font-extrabold font-brandon text-sm border-gray-500 rounded md:w-auto hover:bg-black hover:text-white transition-colors duration-300 ease-in-out flex justify-between items-center">
-          <span>CHOOSE YOUR VESSEL COLOR</span>
-          <span className="text-darker-green font-bold">→</span>
+        <button className="mt-4 p-4 w-full bg-white border-2 border-darker-green font-extrabold font-brandon text-sm rounded md:w-auto hover:text-green transition-colors duration-300 ease-in-out flex justify-between items-center">
+          <span className="border-r-2 border-darker-green pr-2 text-dark-green flex-grow">CHOOSE YOUR VESSEL COLOR</span>
+          <span className="text-darker-green font-bold pl-2">→</span>
         </button>
       </div>
       <div className="grid grid-cols-3 gap-x-8 gap-y-4 w-full h-full">
